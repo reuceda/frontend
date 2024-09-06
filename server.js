@@ -17,9 +17,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('index');
 });
+app.get('/login', (req, res) => {
+    res.render('login');
+});
 
-app.get('/departamentos', (req, res) => {
-    res.render("departamentos");
+app.get('/terapia_fisica', (req, res) => {
+    res.render("terapia_fisica");
 });
 
 app.listen(port, () => {

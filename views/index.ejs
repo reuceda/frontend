@@ -9,7 +9,62 @@
 <body>
     <%- include('partials/theme-loader') %>
     <%- include('partials/side_menu') %>
-    <%- include('partials/calendar') %>
+    
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- Main-body start -->
+            <div class="main-body">
+                <div class="page-wrapper full-calender">
+                    <!-- Page-header start -->
+                    <div class="page-header">
+                        <div class="row align-items-end">
+                            <div class="col-lg-8">
+                                <div class="page-header-title">
+                                    <div class="d-inline">
+                                        <h4>Todas las citas</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page-header end -->
+                    <div class="page-body">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Calendario de citas por servicio</h5>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+
+                                    <div class="">
+                                        <div id='calendar'></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-error">
+                        <div class="card text-center">
+                            <div class="card-block">
+                                <div class="m-t-10">
+                                    <i class="icofont icofont-warning text-white bg-c-yellow"></i>
+                                    <h4 class="f-w-600 m-t-25">Not supported</h4>
+                                    <p class="text-muted m-b-0">Full Calender not supported in this
+                                        device</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main-body end -->
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+
     <%- include('partials/footer') %>
 </body>
 
