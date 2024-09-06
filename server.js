@@ -13,16 +13,16 @@ app.use(express.urlencoded({ extended: true }));
 // Configuración estática para Bootstrap
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rutas
 app.get('/', (req, res) => {
-    res.render('index');
-});
-app.get('/login', (req, res) => {
     res.render('login');
 });
 
-app.get('/terapia_fisica', (req, res) => {
-    res.render("terapia_fisica");
+app.get('/t_fisica', (req, res) => {
+    res.render("t_fisica");
+});
+
+app.get('/t_psicologica', (req, res) => {
+    res.render("t_psicologica");
 });
 
 app.listen(port, () => {
