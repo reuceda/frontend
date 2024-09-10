@@ -20,7 +20,7 @@
     
                         <form class="md-float-material form-material">
                             <div class="text-center">
-                                <img src="../files/assets/images/logo.png" alt="logo.png">
+                                <img src="/files/assets/images/logo.png" alt="logo.png">
                             </div>
                             <div class="auth-box card">
                                 <div class="card-block">
@@ -30,7 +30,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 form-primary">
-                                        <input type="text" name="user" id="user" class="form-control" required
+                                        <input type="text" name="username" id="username" class="form-control" required
                                             placeholder="Usuario">
                                         <span class="form-bar"></span>
                                     </div>
@@ -57,7 +57,7 @@
                                     <div class="row m-t-30">
                                         <div class="col-md-12">
                                             <div class="d-grid">
-                                                <button type="button" class="btn btn-primary btn-md waves-effect waves-light text-center m-b-20">
+                                                <button id="btnEntrar" onclick="entrar()" type="button" class="btn btn-primary btn-md waves-effect waves-light text-center m-b-20">
                                                     Entrar
                                                 </button>
                                             </div>
@@ -66,7 +66,7 @@
                                     <hr />
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="../files/assets/images/auth/Logo-small-bottom.png"
+                                            <img src="/files/assets/images/auth/Logo-small-bottom.png"
                                                 alt="small-logo.png">
                                         </div>
                                     </div>
@@ -81,8 +81,9 @@
             </div>
             <!-- end of container-fluid -->
         </section>
-
+        
             <%- include('partials/footer') %>
+            <script src="/files/controllers/login.js"></script>
 </body>
 
 </html>

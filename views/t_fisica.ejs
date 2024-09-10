@@ -4,69 +4,150 @@
 <head>
     <title>Dashboard</title>
     <%- include('partials/header') %>
+    
 </head>
 
 <body>
-    <% const currentPage = 't_fisica'; %>
-    <%- include('partials/theme-loader') %>
-    <%- include('partials/side_menu', { currentPage: currentPage }) %>
+    <% const currentPage='t_fisica' ; %>
+        <%- include('partials/theme-loader') %>
+            <%- include('partials/side_menu', { currentPage: currentPage }) %>
 
-    <div class="pcoded-content">
-        <div class="pcoded-inner-content">
-            <!-- Main-body start -->
-            <div class="main-body">
-                <div class="page-wrapper full-calender">
-                    <!-- Page-header start -->
-                    <div class="page-header">
-                        <div class="row align-items-end">
-                            <div class="col-lg-8">
-                                <div class="page-header-title">
-                                    <div class="d-inline">
-                                        <h4>Terapia Física</h4>
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper full-calender">
+                                <!-- Page-header start -->
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <h4>Terapia Física</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="page-body">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <button id="btncrearcita" onclick="mostrar_formulario(true)" class="btn btn-primary">Crear
+                                                cita</button>
+                                        </div>
+                                        <div id="calendario" class="card-block">
+                                            <div class="row">
+
+                                                <div class="">
+                                                    <div id='calendar'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-block">
+                                            <form id="formulario">
+                                                <div class="mb-3 row">
+                                                    <h5>Formulario de creación de cita</h5>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-3">
+                                                        <input id="nombres" name="nombres" type="text"
+                                                            class="form-control form-control-sm" placeholder="Nombres *" required>
+                                                    </div>
+
+                                                    <div class="col-sm-3">
+                                                        <input id="apellidos" name="apellidos" type="text"
+                                                            class="form-control form-control-sm"
+                                                            placeholder="Apellidos *" required>
+                                                    </div>
+
+                                                    <div class="col-sm-1">
+                                                        <input id="edad" name="edad" type="number"
+                                                            class="form-control form-control-sm" placeholder="Edad *" required>
+                                                    </div>
+
+                                                    <div class="col-sm-2">
+                                                        <input id="dni" name="dni" type="text"
+                                                            class="form-control form-control-sm" placeholder="DNI *" required>
+                                                    </div>
+
+                                                    <div class="col-sm-2">
+                                                        <input id="nacionalidad" name="nacionalidad" type="text"
+                                                            class="form-control form-control-sm"
+                                                            placeholder="Nacionalidad *" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-2">
+                                                        <select name="sexo" id="sexo"
+                                                            class="form-control form-control-sm">
+                                                            <option value="">Sexo</option>
+                                                            <option value="femenino">Femenino</option>
+                                                            <option value="masculino">Mascuino</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <input id="direccion" name="direccion" type="text"
+                                                            class="form-control form-control-sm"
+                                                            placeholder="Direccion *" required>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input id="telefono" name="telefono" type="number"
+                                                            class="form-control form-control-sm" placeholder="Teléfono *" required>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <input id="email" name="email" type="email"
+                                                            class="form-control form-control-sm" placeholder="Email">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input id="fecha_cita" name="fecha_cita" type="datetime-local"
+                                                            class="form-control form-control-sm" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-6">
+                                                        <input id="comentarios" name="comentarios" type="text"
+                                                            class="form-control form-control-sm"
+                                                            placeholder="Comentarios">
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div id="botones_control" class="card-footer">
+                                            <button onclick="crear()" type="submit" class="col-sm-2 btn btn-primary">Crear cita</button>
+                                            <button type="reset" class="col-sm-2 btn btn-secondary">Limpiar</button>
+                                            <button onclick="mostrar_formulario(false)" type="reset"
+                                                class="col-sm-2 btn btn-warning">Regresar</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="page-error">
+                                    <div class="card text-center">
+                                        <div class="card-block">
+                                            <div class="m-t-10">
+                                                <i class="icofont icofont-warning text-white bg-c-yellow"></i>
+                                                <h4 class="f-w-600 m-t-25">Not supported</h4>
+                                                <p class="text-muted m-b-0">Full Calender not supported in this
+                                                    device</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Page-header end -->
-                    <div class="page-body">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Calendario de citas para Terapia Física</h5>
-                            </div>
-                            <div class="card-block">
-                                <div class="row">
+                        <!-- Main-body end -->
 
-                                    <div class="">
-                                        <div id='calendar'></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-error">
-                        <div class="card text-center">
-                            <div class="card-block">
-                                <div class="m-t-10">
-                                    <i class="icofont icofont-warning text-white bg-c-yellow"></i>
-                                    <h4 class="f-w-600 m-t-25">Not supported</h4>
-                                    <p class="text-muted m-b-0">Full Calender not supported in this
-                                        device</p>
-                                </div>
-                            </div>
+                        <div id="styleSelector">
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Main-body end -->
 
-            <div id="styleSelector">
-
-            </div>
-        </div>
-    </div>
-
-    <%- include('partials/footer') %>
+                <%- include('partials/footer') %>
+                    <script src="/files/controllers/t_fisica.js"></script>
+                    <script src="/files/controllers/recibir_fecha_clickeada.js"></script>
 </body>
 
 </html>
