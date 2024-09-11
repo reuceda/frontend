@@ -49,9 +49,6 @@ app.get('/t_psicologica', (req, res) => {
     res.render("t_psicologica");
 });
 
-app.get('/protected', (req, res) => {
-    res.send('Welcome to the protected route');
-});
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
