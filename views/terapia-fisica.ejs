@@ -53,9 +53,10 @@
                                                 <div class="mb-3 row">
 
                                                     <div class="col-sm-3">
+                                                        <label for="cmdpacientes">Elegir paciente:</label>
                                                         <select name="cmbpacientes" id="cmbpacientes" onchange="cargar_pacientes()"
                                                             class="form-control select2">
-                                                            <option value="">Seleccionar paciente</option>
+                                                            <option value="">Seleccionar</option>
                                                         </select>
                                                     </div>
 
@@ -165,7 +166,7 @@
                 </div>
 
                 <%- include('partials/footer') %>
-                    <script src="/files/controllers/t_fisica.js"></script>
+                    <script src="/files/controllers/terapia-fisica.js"></script>
                     <script src="/files/controllers/recibir_fecha_clickeada.js"></script>
 </body>
 
