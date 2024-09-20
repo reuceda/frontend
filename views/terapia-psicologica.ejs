@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <% const currentPage = 't_psicologica'; %>
+    <% const currentPage = 'terapia-psicologica'; %>
     <%- include('partials/theme-loader') %>
     <%- include('partials/side_menu', { currentPage: currentPage }) %>
 
@@ -38,7 +38,7 @@
                                 <div class="row">
 
                                     <div class="">
-                                        <div id='calendar'></div>
+                                        <div id='calendar-psicologica'></div>
                                     </div>
                                 </div>
                             </div>
@@ -67,6 +67,8 @@
     </div>
 
     <%- include('partials/footer') %>
+    <!-- custom js -->
+    <script type="text/javascript" src="/files/assets/pages/full-calender/calendar-psicologica.js"></script>
 </body>
 
 </html>

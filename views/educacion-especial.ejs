@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <% const currentPage='terapia-fisica' ; %>
+    <% const currentPage='educacion-especial' ; %>
         <%- include('partials/theme-loader') %>
             <%- include('partials/side_menu', { currentPage: currentPage }) %>
 
@@ -23,7 +23,7 @@
                                         <div class="col-lg-8">
                                             <div class="page-header-title">
                                                 <div class="d-inline">
-                                                    <h4>Terapia Física</h4>
+                                                    <h4>Educación Especial</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,7 +41,7 @@
                                             <div class="row">
 
                                                 <div class="">
-                                                    <div id='calendar-fisica'></div>
+                                                    <div id='calendar-educacion-especial'></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -55,7 +55,7 @@
                                                     <div class="col-sm-3">
                                                         <label for="cmdpacientes">Elegir paciente:</label>
                                                         <select name="cmbpacientes" id="cmbpacientes"
-                                                            onchange="cargarPacientes()" class="form-control select2">
+                                                            onchange="cargar_pacientes()" class="form-control select2">
                                                             <option value="">Seleccionar</option>
                                                         </select>
                                                     </div>
@@ -166,10 +166,10 @@
                 </div>
 
                 <%- include('partials/footer') %>
-                    <script src="/files/controllers/terapia-fisica.js"></script>
+                    <script type="module" src="/files/controllers/terapia-fisica.js"></script>
                     <script src="/files/controllers/recibir_fecha_clickeada.js"></script>
                     <!-- custom js -->
-                    <script type="text/javascript" src="/files/assets/pages/full-calender/calendar-fisica.js"></script>
+                    <script type="text/javascript" src="/files/assets/pages/full-calender/calendar-educacion-especial.js"></script>
 </body>
 
 </html>
