@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const port = 3000;
 const path = require('path');
-const authenticate = require("./middlewares/authenticate");
+//const authenticate = require("./public/files/controllers/authenticate");
 const cookieParser = require('cookie-parser');
 
 app.use(express.json());
@@ -24,28 +24,15 @@ app.use(cors({
     credentials: true,
 }));
 
-app.get('/', authenticate, async (req, res) => {
-    res.render("index");
+app.get('/', async (req, res) => {
+    res.render("login");
 });
 
-app.get('/cargar_pacientes', async (req, res) => {
-    const loginResponse = await fetch('http://localhost:8080/api/pacientes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-    });
-    if (!loginResponse.ok) {
-        return res.render('login');
-    }
-});
-
-app.get('/terapia-fisica', authenticate, (req, res) => {
+app.get('/terapia-fisica', (req, res) => {
     res.render("terapia-fisica");
 });
 
-app.get('/pacientes', authenticate, (req, res) => {
+app.get('/pacientes', (req, res) => {
     res.render("t_fisica");
 });
 
