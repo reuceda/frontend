@@ -1,0 +1,84 @@
+<div class="card-block">
+    <form id="formulario">
+        <div class="mb-3 row">
+
+            <div class="col-sm-3">
+                <label for="cmbpacientes">Elegir paciente:</label>
+                <select name="cmbpacientes" id="cmbpacientes"
+                    onchange="listarPaciente()" class="form-control select2">
+                </select>
+
+            </div>
+            
+            <div class="col-sm-2">
+                <label for="nombres">Nombres: *</label>
+                <input id="nombres" name="nombres" type="text"
+                    class="form-control form-control-sm" required>
+            </div>
+
+            <div class="col-sm-2">
+                <label for="apellidos">Apellidos: *</label>
+                <input id="apellidos" name="apellidos" type="text"
+                    class="form-control form-control-sm" required>
+            </div>
+
+            <div class="col-sm-2">
+                <label for="fecha_nac" class="">Fecha Nacimiento</label>
+                <input id="fecha_nac" name="fecha_nac" type="date"
+                    class="form-control">
+            </div>
+
+            <div class="col-sm-2">
+                <label for="dni">DNI: *</label>
+                <input id="dni" name="dni" type="text"
+                    class="form-control form-control-sm" required>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-2">
+                <label for="nacionalidad">Nacionalidad: </label>
+                <input id="nacionalidad" name="nacionalidad" type="text"
+                    class="form-control form-control-sm">
+            </div>
+            <div class="col-sm-2">
+                <label for="sexo">Sexo: </label>
+                <select name="sexo" id="sexo"
+                    class="form-control form-control-sm">
+                    <option value="">Seleccione</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Mascuino</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label for="direccion">Dirección: </label>
+                <input id="direccion" name="direccion" type="text"
+                    class="form-control form-control-sm" required>
+            </div>
+            <div class="col-sm-2">
+                <label for="telefono">Teléfono: *</label>
+                <input id="telefono" name="telefono" type="number"
+                    class="form-control form-control-sm" required>
+            </div>
+            <div class="col-sm-3">
+                <label for="email">Email: *</label>
+                <input id="email" name="email" type="email"
+                    class="form-control form-control-sm">
+            </div>
+
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-2">
+                <label for="fecha_cita">Fecha de la cita: *</label>
+                <input id="fecha_cita" name="fecha_cita" type="datetime-local"
+                    class="form-control form-control-sm" required>
+            </div>
+            <div class="col-sm-6">
+                <label for="comentarios">Comentarios: </label>
+                <input id="comentarios" name="comentarios" type="text"
+                    class="form-control form-control-sm">
+            </div>
+        </div>
+
+</div>

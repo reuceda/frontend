@@ -32,16 +32,28 @@
                     <div class="page-body">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Calendario de citas para Terapia Física</h5>
+                                <button id="btncrearcita" onclick="mostrar_formulario(true)"
+                                class="btn btn-warning">Gestionar citas</button>
                             </div>
-                            <div class="card-block">
+                            <div id="calendario" class="card-block">
                                 <div class="row">
 
                                     <div class="">
-                                        <div id='calendar-psicologica'></div>
+                                        <div id='calendar-fisica'></div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <%- include('partials/formulario') %>
+
+                            <div id="botones_control" class="card-footer">
+                                <button onclick="crear()" type="submit"
+                                    class="col-sm-2 btn btn-primary">Crear cita</button>
+                                <button type="reset" class="col-sm-2 btn btn-secondary">Limpiar</button>
+                                <button onclick="mostrar_formulario(false)" type="reset"
+                                    class="col-sm-2 btn btn-warning">Regresar</button>
+                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="page-error">
@@ -68,7 +80,7 @@
 
     <%- include('partials/footer') %>
     <!-- custom js -->
-    <script type="text/javascript" src="/files/assets/pages/full-calender/calendar-psicologica.js"></script>
+    <script type="text/javascript" src="/files/controllers/calendar-psicologica.js"></script>
 </body>
 
 </html>

@@ -20,6 +20,11 @@ window.addEventListener('message', function (event) {
             return;
         }
 
+        if (dateObj.getDay() === 0) { // getDay() devuelve 0 para domingo
+            alert('No se permiten citas en domingo');
+            return;
+        }
+
         // Convertir `dateObj` a formato `datetime-local`
         var year = dateObj.getFullYear();
         var month = String(dateObj.getMonth() + 1).padStart(2, '0');

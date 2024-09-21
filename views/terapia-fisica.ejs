@@ -34,8 +34,7 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <button id="btncrearcita" onclick="mostrar_formulario(true)"
-                                                class="btn btn-primary">Crear
-                                                cita</button>
+                                                class="btn btn-warning">Gestionar citas</button>
                                         </div>
                                         <div id="calendario" class="card-block">
                                             <div class="row">
@@ -45,104 +44,56 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-block">
-                                            <form id="formulario">
-                                                <div class="mb-3 row">
-                                                    <h5>Formulario de creación de cita</h5>
-                                                </div>
-                                                <div class="mb-3 row">
 
-                                                    <div class="col-sm-3">
-                                                        <label for="cmdpacientes">Elegir paciente:</label>
-                                                        <select name="cmbpacientes" id="cmbpacientes"
-                                                            onchange="cargarPacientes()" class="form-control select2">
-                                                            <option value="">Seleccionar</option>
-                                                        </select>
-                                                    </div>
+                                        <%- include('partials/formulario') %>
 
-                                                    <div class="col-sm-2">
-                                                        <label for="nombres">Nombres: *</label>
-                                                        <input id="nombres" name="nombres" type="text"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-
-                                                    <div class="col-sm-2">
-                                                        <label for="apellidos">Apellidos: *</label>
-                                                        <input id="apellidos" name="apellidos" type="text"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-
-                                                    <div class="col-sm-2">
-                                                        <label for="fecha_nac" class="">Fecha Nacimiento</label>
-                                                        <input id="fecha_nac" name="fecha_nac" type="date"
-                                                            class="form-control">
-                                                    </div>
-
-                                                    <div class="col-sm-2">
-                                                        <label for="dni">DNI: *</label>
-                                                        <input id="dni" name="dni" type="text"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="mb-3 row">
-                                                    <div class="col-sm-2">
-                                                        <label for="nacionalidad">Nacionalidad: </label>
-                                                        <input id="nacionalidad" name="nacionalidad" type="text"
-                                                            class="form-control form-control-sm">
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <label for="sexo">Sexo: </label>
-                                                        <select name="sexo" id="sexo"
-                                                            class="form-control form-control-sm">
-                                                            <option value="">Seleccione</option>
-                                                            <option value="femenino">Femenino</option>
-                                                            <option value="masculino">Mascuino</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <label for="direccion">Dirección: </label>
-                                                        <input id="direccion" name="direccion" type="text"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <label for="telefono">Teléfono: *</label>
-                                                        <input id="telefono" name="telefono" type="number"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <label for="email">Email: *</label>
-                                                        <input id="email" name="email" type="email"
-                                                            class="form-control form-control-sm">
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="mb-3 row">
-                                                    <div class="col-sm-2">
-                                                        <label for="fecha_cita">Fecha de la cita: *</label>
-                                                        <input id="fecha_cita" name="fecha_cita" type="datetime-local"
-                                                            class="form-control form-control-sm" required>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label for="comentarios">Comentarios: </label>
-                                                        <input id="comentarios" name="comentarios" type="text"
-                                                            class="form-control form-control-sm">
-                                                    </div>
-                                                </div>
-                                        </div>
                                         <div id="botones_control" class="card-footer">
-                                            <button onclick="crear()" type="submit"
-                                                class="col-sm-2 btn btn-primary">Crear cita</button>
-                                            <button type="reset" class="col-sm-2 btn btn-secondary">Limpiar</button>
-                                            <button onclick="mostrar_formulario(false)" type="reset"
+                                            <button onclick="crear_cita()"
+                                                class="col-sm-2 btn btn-primary">Guardar</button>
+                                            <button onclick="limpiar()" class="col-sm-2 btn btn-secondary">Limpiar</button>
+                                            <button onclick="mostrar_formulario(false)"
                                                 class="col-sm-2 btn btn-warning">Regresar</button>
                                         </div>
-                                        </form>
+
+                                            <div class="panel-body table-responsive" id="paneltabla" name="paneltabla">
+                                                <div class="card">
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body">
+                                                        <table id="tablaempleados" name="tablaempleados"
+                                                            class="table table-bordered table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Opciones</th>
+                                                                    <th>Paciente</th>
+                                                                    <th>DNI</th>
+                                                                    <th>Fecha cita</th>
+                                                                    <th>Teléfono</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>Opciones</th>
+                                                                    <th>Paciente</th>
+                                                                    <th>DNI</th>
+                                                                    <th>Fecha cita</th>
+                                                                    <th>Teléfono</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            
+                                            </form>
                                     </div>
+                                    
                                 </div>
+                                
 
                                 <div class="page-error">
                                     <div class="card text-center">
@@ -169,7 +120,7 @@
                     <script src="/files/controllers/terapia-fisica.js"></script>
                     <script src="/files/controllers/recibir_fecha_clickeada.js"></script>
                     <!-- custom js -->
-                    <script type="text/javascript" src="/files/assets/pages/full-calender/calendar-fisica.js"></script>
+                    <script type="text/javascript" src="/files/controllers/calendar-fisica.js"></script>
 </body>
 
 </html>
